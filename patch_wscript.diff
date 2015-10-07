@@ -1,0 +1,15 @@
+diff --git a/wscript b/wscript
+index 71f2c9a..b39e109 100644
+--- a/wscript
++++ b/wscript
+@@ -146,6 +146,10 @@ def build(bld):
+ 
+     module.ndncxx_headers = bld.path.ant_glob(['ndn-cxx/src/**/*.hpp'],
+                                               excl=['src/**/*-osx.hpp', 'src/detail/**/*'])
++
++    if bld.env['ENABLE_BRITE']:
++        module.includes.append(os.path.abspath(os.path.join(bld.env['WITH_BRITE'],'.')))
++
+     if bld.env.ENABLE_EXAMPLES:
+         bld.recurse('examples')
+ 
