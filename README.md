@@ -36,6 +36,7 @@ Then append these two lines (please watch out for proper indentation with 4 spac
 
 	cd ns-3/src/ndnSIM
 	patch < ../../../ndn-brite-helper/patch_wscript.diff
+	cd ../../../
 
 ## Compile
 
